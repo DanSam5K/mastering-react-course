@@ -56,3 +56,91 @@ const lordify3 = ({ firstname, spouse: { firstname: spouseName } }) => {
 lordify3(regularPerson2); // John and Jane of Canterbury
 
 // Destructuring arrays
+const [firstMountain] = ['Freel', 'Rose', 'Tallac', 'Rubicon'];
+console.log(firstMountain); // Freel
+
+// pass unnecessary values
+const [, secondMountain] = ['Freel', 'Rose', 'Tallac', 'Rubicon'];
+console.log(secondMountain); // Rose
+
+// Object literal enhancement
+const name1 = 'Tallac';
+const elevation = 9738;
+// old way
+const print = function () {
+  console.log(`Mt. ${this.name} is ${this.elevation} feet tall`);
+};
+const funHike = { name1, elevation, print };
+console.log(funHike); // { name: 'Tallac', elevation: 9738 }
+console.log(funHike.print()); // Mt. Tallac is 9738 feet tall
+
+// Shorthand method names
+const skier = {
+  name: 'John',
+  sound: 'yodel',
+  powderYell() {
+    let yell = this.sound.toUpperCase();
+    console.log(`${yell} ${yell} ${yell}!!!`);
+  },
+  speed(mph) {
+    this.speed = mph;
+    console.log('speed:', mph);
+  },
+};
+
+skier.powderYell(); // YODEL YODEL YODEL!!!
+
+// Computed property names
+const hiker = {
+  [name1]: elevation,
+};
+console.log(hiker); // { Tallac: 9738 }
+
+// Spread operator
+const lakes = ['Donner', 'Marlette', 'Fallen Leaf', 'Cascade'];
+const [first, ...rest] = lakes;
+console.log(rest); // [ 'Marlette', 'Fallen Leaf', 'Cascade' ]
+
+// Spread operator with objects
+const morning = {
+  breakfast: 'oatmeal',
+  lunch: 'peanut butter and jelly',
+};
+const dinner = 'mac and cheese';
+const backpackingMeals = {
+  ...morning,
+  dinner,
+};
+console.log(backpackingMeals); // { breakfast: 'oatmeal', lunch: 'peanut butter and jelly', dinner: 'mac and cheese' }
+
+// Spread operator with functions
+const evening = {
+  dinner: 'mac and cheese',
+};
+const backpackingMeals2 = {
+  ...morning,
+  ...evening,
+};
+
+console.log(backpackingMeals2); // { breakfast: 'oatmeal', lunch: 'peanut butter and jelly', dinner: 'mac and cheese' }
+
+// use spread operator to collect function arguments
+const print2 = (...items) => {
+  console.log(items);
+};
+
+print2('a', 'b', 'c'); // [ 'a', 'b', 'c' ]
+
+// Rest parameters
+const numbers = (...nums) => {
+  console.log(nums);
+};
+
+numbers(1, 2, 3, 4, 5); // [ 1, 2, 3, 4, 5 ]
+
+// Rest parameters with destructuring
+const sum = (...numbers) => {
+  return numbers.reduce((acc, number) => acc + number, 0);
+};
+
+console.log(sum(1, 2, 3, 4, 5)); // 15
