@@ -1,3 +1,5 @@
+import { completePage } from './children.js';
+
 const element = React.createElement('h1', { id: 'recipe-0' }, 'Hello React');
 
 const dish = React.createElement('h2', null, 'baked bean');
@@ -13,8 +15,5 @@ const list = React.createElement(
   React.createElement('li', null, '1 Teaspoon kosher salt'),
   React.createElement('li', null, '4 cloves of chopped garlic')
 );
-console.log(list);
-ReactDOM.render(
-  [element, dish, dessert, list, completePage],
-  document.getElementById('root')
-);
+
+ReactDOM.render([completePage], document.getElementById('root'));
