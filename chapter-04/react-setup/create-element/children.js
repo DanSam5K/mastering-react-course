@@ -1,4 +1,4 @@
-export const completePage = React.createElement(
+const completePage = React.createElement(
   'section',
   { id: 'baked-salmon' },
   React.createElement('h1', null, 'Baked Salmon'),
