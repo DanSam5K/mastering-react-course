@@ -15,3 +15,5 @@ Note: This project is based on the book [Learning React, Second Edition](https:/
 - [Chapter 1: Welcome to React and Installation](./chapter-01/README.md)
 - [Chapter 2: JavaScript For React](./chapter-02)
 - [Chapter 3: Functional Programming With JavaScript](./chapter-03/)
+- [Chapter 4: How React Works](./chapter-04/)
+- [Chapter 5: React With JSX](./chapter-05/)
