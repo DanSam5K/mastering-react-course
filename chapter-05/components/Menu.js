@@ -1,8 +1,5 @@
 import { data } from './data.js';
-import Recipe from './Recipe.js';
-
-console.log(data);
-console.log(Recipe);
+import { Recipe } from './Recipe.js';
 
 // function Menu(props) {
 //   return (
@@ -21,27 +18,6 @@ console.log(Recipe);
 //         })}
 //       </div>
 //     </article>
-//   );
-// }
-
-// function Recipe({ name, ingredients, steps }) {
-//   return (
-//     <>
-//       <section id={name.toLowerCase().replace(/ /g, '-')}>
-//         <h1>{name}</h1>
-//         <ul className="ingredients">
-//           {ingredients.map((ingredient, i) => (
-//             <li key={i}>{ingredient.name}</li>
-//           ))}
-//         </ul>
-//         <section className="instructions">
-//           <h2>Cooking Instructions</h2>
-//           {steps.map((step, i) => (
-//             <p key={i}>{step}</p>
-//           ))}
-//         </section>
-//       </section>
-//     </>
 //   );
 // }
 
