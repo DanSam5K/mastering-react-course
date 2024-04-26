@@ -1,7 +1,7 @@
 import React from 'react';
 import Recipe from './Recipe';
 
-function Menu({ recipes }) {
+export default function Menu({ recipes }) {
   return (
     <article>
       <header>
