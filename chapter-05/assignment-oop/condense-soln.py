@@ -80,8 +80,7 @@ def read_file_and_initialize_colonies(filename):
 
         for i in range(1, colony_count + 1):
             name, species, number = lines[i].split()
-            species_class = species_to_class_map.get(species)
-            if species_class:
+            if species_class := species_to_class_map.get(species):
                 colony = species_class(name, species, number)
                 if species in ['l', 'h', 'g']:  # Prey species codes
                     preys.append(colony)
@@ -94,11 +93,7 @@ def read_file_and_initialize_colonies(filename):
 # Main simulation loop
 def simulate_ecosystem(preys, predators):
     turn = 0
-    while True:
-        # Check stop condition
-        if any(pred.number_of_animals <= 4 or pred.number_of_animals >= pred.initial_number * 2 for pred in predators):
-            break
-
+    while not any(pred.number_of_animals <= 4 or pred.number_of_animals >= pred.initial_number * 2 for pred in predators):
         print(f"Turn {turn}:")
         for colony in preys + predators:
             print(f"{colony.name} ({colony.species}): {colony.number_of_animals}")
